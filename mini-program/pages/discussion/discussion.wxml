@@ -1,2 +1,35 @@
 <!-- pages/discussion/discussion.wxml -->
-<view class="page"><text>讨论</text></view>
+<view class="page">
+  <!-- Progress Bar -->
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+  </view>
+  <text class="step-indicator">步骤 {{currentStep + 1}} / {{totalSteps}}</text>
+
+  <!-- Question Card -->
+  <view class="question-card">
+    <text class="question-text">{{currentQuestion.text}}</text>
+    <text class="question-hint" wx:if="{{currentQuestion.hint}}">
+      💡 {{currentQuestion.hint}}
+    </text>
+  </view>
+
+  <!-- Answer Area -->
+  <view class="answer-area">
+    <textarea
+      class="answer-input"
+      placeholder="在这里输入你的思考..."
+      bindinput="onAnswerInput"
+      value="{{answer}}"
+    />
+    <button class="btn-submit" bindtap="submitAnswer" disabled="{{!answer}}">
+      提交回答
+    </button>
+  </view>
+
+  <!-- Navigation (after completion) -->
+  <view class="nav-buttons" wx:if="{{completed}}">
+    <button class="btn-secondary" bindtap="goBack">返回内容</button>
+    <button class="btn-primary" bindtap="nextQuestion">下一步</button>
+  </view>
+</view>
