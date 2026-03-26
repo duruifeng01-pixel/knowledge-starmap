@@ -1,2 +1,88 @@
 /* pages/content/content.wxss */
-.page { min-height: 100vh; background: #0D0D0D; }
+.page {
+  min-height: 100vh;
+  background: #0D0D0D;
+  display: flex;
+  flex-direction: column;
+}
+.content-scroll {
+  flex: 1;
+  height: calc(100vh - 200rpx);
+  padding: 24rpx;
+}
+.content-text {
+  color: #FFFFFF;
+  font-size: 32rpx;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+/* Floating Mind Map Panel */
+.mindmap-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #1A1A1A;
+  border-top: 1px solid #2A2A2A;
+  transition: height 0.3s ease;
+  z-index: 100;
+}
+.mindmap-panel.collapsed {
+  height: 80rpx;
+}
+.mindmap-panel.expanded {
+  height: 500rpx;
+}
+.panel-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx;
+  gap: 8rpx;
+}
+.handle-icon, .handle-text {
+  color: #6366F1;
+  font-size: 24rpx;
+}
+.mindmap-container {
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+}
+.mindmap-canvas {
+  width: 100%;
+  height: 100%;
+}
+.mindmap-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  padding: 0 24rpx 24rpx;
+}
+.node {
+  background: #2A2A2A;
+  border-radius: 8rpx;
+  padding: 12rpx 16rpx;
+  font-size: 26rpx;
+  color: #FFFFFF;
+}
+.node.mastered { background: #22C55E; color: #000; }
+.node.in-progress { background: #6366F1; }
+
+/* Discussion Button */
+.discussion-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24rpx;
+  background: linear-gradient(transparent, #0D0D0D 30%);
+}
+.btn-discuss {
+  background: #6366F1;
+  color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}

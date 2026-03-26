@@ -1,2 +1,39 @@
 <!-- pages/content/content.wxml -->
-<view class="page"><text>内容</text></view>
+<view class="page">
+  <!-- Content Area -->
+  <scroll-view class="content-scroll" scroll-y>
+    <view class="content-body">
+      <text class="content-text">{{content}}</text>
+    </view>
+  </scroll-view>
+
+  <!-- Floating Mind Map Panel -->
+  <view class="mindmap-panel {{panelExpanded ? 'expanded' : 'collapsed'}}">
+    <view class="panel-handle" bindtap="togglePanel">
+      <text class="handle-icon">{{panelExpanded ? '▼' : '▲'}}</text>
+      <text class="handle-text">{{panelExpanded ? '收起导图' : '展开导图'}}</text>
+    </view>
+
+    <block wx:if="{{panelExpanded}}">
+      <view class="mindmap-container">
+        <canvas canvas-id="mindmap" class="mindmap-canvas" />
+      </view>
+      <view class="mindmap-nodes">
+        <block wx:for="{{mindmapNodes}}" wx:key="id">
+          <view
+            class="node {{item.status}}"
+            bindtap="onNodeTap"
+            data-id="{{item.id}}"
+          >
+            <text>{{item.label}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+
+  <!-- Start Discussion Button -->
+  <view class="discussion-bar" wx:if="{{!discussionStarted}}">
+    <button class="btn-discuss" bindtap="startDiscussion">开始讨论</button>
+  </view>
+</view>
