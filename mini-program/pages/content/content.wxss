@@ -1,0 +1,2 @@
+/* pages/content/content.wxss */
+.page { min-height: 100vh; background: #0D0D0D; }

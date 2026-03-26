@@ -1,0 +1,20 @@
+<!-- pages/onboarding/onboarding.wxml -->
+<view class="container">
+  <view class="step" wx:if="{{step === 1}}">
+    <text class="title">你是做什么行业的？</text>
+    <input class="input" placeholder="如：记者、产品经理、学生..." bindinput="onIndustryInput" />
+    <button class="btn-primary" bindtap="nextStep">下一步</button>
+  </view>
+
+  <view class="step" wx:if="{{step === 2}}">
+    <text class="title">你的学习目标是什么？</text>
+    <textarea class="textarea" placeholder="描述你的学习目标..." bindinput="onGoalsInput" />
+    <button class="btn-primary" bindtap="nextStep">下一步</button>
+  </view>
+
+  <view class="step" wx:if="{{step === 3}}">
+    <text class="title">想深耕哪些领域？</text>
+    <input class="input" placeholder="如：AI、产品设计、商业分析..." bindinput="onDomainsInput" />
+    <button class="btn-primary" bindtap="submit">完成</button>
+  </view>
+</view>
