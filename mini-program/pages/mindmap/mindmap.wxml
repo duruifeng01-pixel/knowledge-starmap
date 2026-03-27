@@ -1,2 +1,29 @@
 <!-- pages/mindmap/mindmap.wxml -->
-<view class="page"><text>星图</text></view>
+<view class="page">
+  <view class="header">
+    <text class="title">我的知识星图</text>
+    <text class="subtitle">{{masteredCount}} / {{totalCount}} 已掌握</text>
+  </view>
+
+  <canvas canvas-id="starmap" class="starmap-canvas" bindtap="onCanvasTap"></canvas>
+
+  <view class="legend">
+    <view class="legend-item">
+      <view class="dot mastered"></view>
+      <text>已掌握</text>
+    </view>
+    <view class="legend-item">
+      <view class="dot in-progress"></view>
+      <text>学习中</text>
+    </view>
+    <view class="legend-item">
+      <view class="dot not-started"></view>
+      <text>未开始</text>
+    </view>
+  </view>
+
+  <view class="quick-actions">
+    <button class="btn-action" bindtap="viewInsights">查看思考</button>
+    <button class="btn-action" bindtap="adjustStructure">调整结构</button>
+  </view>
+</view>

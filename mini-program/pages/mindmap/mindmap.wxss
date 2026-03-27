@@ -1,2 +1,78 @@
 /* pages/mindmap/mindmap.wxss */
-.page { min-height: 100vh; background: #0D0D0D; }
+.page {
+  min-height: 100vh;
+  background: #0D0D0D;
+  padding: 24rpx;
+}
+
+.header {
+  margin-bottom: 32rpx;
+}
+
+.title {
+  color: #FFFFFF;
+  font-size: 48rpx;
+  font-weight: bold;
+  display: block;
+}
+
+.subtitle {
+  color: #8A8A8A;
+  font-size: 28rpx;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.starmap-canvas {
+  width: 100%;
+  height: 60vh;
+  background: #0D0D0D;
+}
+
+.legend {
+  display: flex;
+  gap: 32rpx;
+  margin-top: 24rpx;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  color: #8A8A8A;
+  font-size: 26rpx;
+}
+
+.dot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+}
+
+.dot.mastered {
+  background: #22C55E;
+}
+
+.dot.in-progress {
+  background: #6366F1;
+}
+
+.dot.not-started {
+  background: #2A2A2A;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 24rpx;
+  margin-top: 32rpx;
+}
+
+.btn-action {
+  flex: 1;
+  background: #1A1A1A;
+  border: 1px solid #2A2A2A;
+  color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  font-size: 30rpx;
+}
