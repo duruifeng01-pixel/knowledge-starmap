@@ -26,7 +26,7 @@ router.get('/', require('../middleware/auth'), async (req, res) => {
 router.post('/', require('../middleware/auth'), async (req, res) => {
   const { title, contentSource, contentMarkdown } = req.body;
   const result = await tasks.create(req.user.id, title, contentSource, contentMarkdown);
-  res.json(result.rows[0]);
+  res.status(201).json(result.rows[0]);
 });
 
 router.get('/:id', require('../middleware/auth'), async (req, res) => {
