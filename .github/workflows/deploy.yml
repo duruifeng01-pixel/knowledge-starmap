@@ -1,0 +1,13 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy script
+        run: |
+          curl -s -X POST http://159.223.41.247:9000/deploy             -H 'Content-Type: application/json'             -d '{"ref":"refs/heads/main"}'
