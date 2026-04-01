@@ -1,0 +1,117 @@
+.discussion-page {
+  padding-bottom: 100px;
+}
+
+.discussion-header {
+  margin-bottom: 24px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(8, 145, 178, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.step-text {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.question-card {
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.question-card h2 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.question-hint {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 3px solid var(--secondary);
+}
+
+.answer-input {
+  min-height: 150px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+}
+
+.step-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(8, 145, 178, 0.2);
+  transition: all 0.3s ease;
+}
+
+.step-dot.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+.step-dot.done {
+  background: var(--cta);
+}
+
+/* Completion State */
+.discussion-complete {
+  padding: 48px 32px;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.complete-icon {
+  font-size: 4rem;
+  margin-bottom: 24px;
+}
+
+.discussion-complete h2 {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.discussion-complete p {
+  color: var(--text-light);
+  margin-bottom: 32px;
+}
+
+.complete-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.complete-actions .btn {
+  padding: 14px 24px;
+}
